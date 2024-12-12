@@ -1,21 +1,29 @@
+package Pages;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.Test;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class MenuTollbarPage {
-    private final  WebDriver driver;
-    private final By searchTextLocator=By.id("searchData");
-    private final By basketTotalNumberLocator=By.className("basketTotalNum");
+public class MenuTollbarPage extends BasePage {
+
+    @FindBy (id = "searchData")
+    private WebElement searchData;
+
+    @FindBy(className = "basketTotalNum")
+    private WebElement basketTotalNum;
 
     public MenuTollbarPage(WebDriver driver){
-        this.driver=driver;
+        super(driver);
+        PageFactory.initElements(driver,this);
     }
     public void setSearchText(String searchText){
-        driver.findElement(searchTextLocator).sendKeys(searchText+ Keys.ENTER);
+        searchData.sendKeys(searchText+ Keys.ENTER);
     }
     public String getBasketTotalNumber(){
-        return driver.findElement(basketTotalNumberLocator).getText();
+        return basketTotalNum.getText();
     }
 
 
