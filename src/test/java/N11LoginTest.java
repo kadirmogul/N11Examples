@@ -1,9 +1,7 @@
-import Pages.BasePage;
 import Pages.LoginPage;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
-public class N11Login extends BaseTest {
+public class N11LoginTest extends BaseTest {
     LoginPage loginPage;
 
     @Test
