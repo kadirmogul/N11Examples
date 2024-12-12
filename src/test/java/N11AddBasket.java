@@ -4,7 +4,7 @@ import Pages.ResultPage;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-public class N11TestTest extends BaseTest{
+public class N11AddBasket extends BaseTest{
 
     MenuTollbarPage menuTollbarPage;
     ResultPage resultPage;
@@ -21,7 +21,7 @@ public class N11TestTest extends BaseTest{
        resultPage=new ResultPage(driver);
        WebElement resultWebElement=resultPage.getResultWebElement();
        softAssert.assertTrue(resultWebElement.isDisplayed());
-       resultPage.clickToFirstProduct();
+       resultPage.clickToSelectProduct(0);
     }
 
     @Test(priority = 3)
